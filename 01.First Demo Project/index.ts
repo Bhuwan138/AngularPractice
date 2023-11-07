@@ -1,2 +1,2 @@
-let myName:string = "Bhuwan Pandey";
+var myName:string = "Bhuwan Pandey";
 alert(myName);
