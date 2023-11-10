@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "app-product",
+    selector: "app-product1",
     template: `
         <h1> Welcome to Angular Component </h1>
         <hr />
@@ -20,7 +20,7 @@ import { Component } from "@angular/core";
     `]
 })
 
-export class ProductComponent{
+export class ProductComponent1{
     productId:number = 101;
     productName:string = "Samsung Mobile";
     productPrice:number = 25000;
