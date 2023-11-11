@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <h1>Product Details</h1>
+    <hr>
+    <dl>
+        <dt>Product Name</dt>
+        <dd>{{ product.Name }}</dd>
+        <dt>Product Price</dt>
+        <dd>{{ product.Price }}</dd>
+        <dt>
+            <button class="btn btn-primary" (click)="ToogleButton()" >{{btnText}}</button> <br>
+            <div *ngIf="toogle;then Preview;else Description" > </div>
+            <ng-template #Preview>
+                <img [src]="product.Image" >
+            </ng-template>
+            <ng-template #Description>
+                {{ product.Description }}
+            </ng-template>                
+        </dt>
+    </dl>
+</div>

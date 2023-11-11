@@ -184,6 +184,97 @@
           }
         }
       }
+    },
+    "DirectiveDemo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/directive-demo",
+      "sourceRoot": "projects/directive-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/directive-demo",
+            "index": "projects/directive-demo/src/index.html",
+            "main": "projects/directive-demo/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/directive-demo/tsconfig.app.json",
+            "assets": [
+              "projects/directive-demo/src/favicon.ico",
+              "projects/directive-demo/src/assets"
+            ],
+            "styles": [
+              "projects/directive-demo/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "DirectiveDemo:build:production"
+            },
+            "development": {
+              "browserTarget": "DirectiveDemo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "DirectiveDemo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/directive-demo/tsconfig.spec.json",
+            "assets": [
+              "projects/directive-demo/src/favicon.ico",
+              "projects/directive-demo/src/assets"
+            ],
+            "styles": [
+              "projects/directive-demo/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {
