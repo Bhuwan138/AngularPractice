@@ -13,6 +13,9 @@ import { NetflixMainComponent } from './components/Netflix/netflix-main/netflix-
 import { NetflixIndexComponent } from './components/Netflix/netflix-index/netflix-index.component';
 import { NetflixRegisterComponent } from './components/Netflix/netflix-register/netflix-register.component';
 import { ProductComponent } from './components/product/product.component';
+import { DataBindingComponent } from './components/data-binding/data-binding.component';
+import { TwoWayDataBindingComponent } from './components/two-way-data-binding/two-way-data-binding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,16 @@ import { ProductComponent } from './components/product/product.component';
     NetflixHeaderComponent,
     NetflixMainComponent,
     NetflixIndexComponent,
-    NetflixRegisterComponent
+    NetflixRegisterComponent,
+    DataBindingComponent,
+    TwoWayDataBindingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [ProductComponent]
+  bootstrap: [TwoWayDataBindingComponent]
 })
 export class AppModule { }

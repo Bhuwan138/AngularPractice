@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    Product ID : {{productId}} <br/>
+    Product Name : {{productName}} <br>
+    Product Availibility : {{productAvaibality === true? "Available":"Out of Stock" }}   
+</div>
+
+<br><br>
+
+<div>
+    Enter product ID: <input type="text" placeholder="Enter Product ID" [(ngModel)]="productId"> <br>
+    Enter product Name: <input type="text" placeholder="Enter Product Name" [(ngModel)]="productName"> <br>
+    Stock Availability: <input type="checkbox" [(ngModel)]="productAvaibality" />
+</div>
