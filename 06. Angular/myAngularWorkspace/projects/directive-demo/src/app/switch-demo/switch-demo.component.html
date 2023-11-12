@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Product Details</h2>
+    <div class="btn-tools">
+        <button name="basic" class="btn btn-warning m-2" (click)="ChangeTemplate($event)" >Basic Info</button>
+        <button name="preview" class="btn btn-warning m-2" (click)="ChangeTemplate($event)" >Preview Image</button>
+        <button name="rating" class="btn btn-warning m-2" (click)="ChangeTemplate($event)" >Rating</button>
+        <button name="description" class="btn btn-warning m-2" (click)="ChangeTemplate($event)" >Description</button>
+    </div>
+    <div [ngSwitch]="Template">
+        <p *ngSwitchCase="'basic'"> 
+           <strong>Product Title</strong>  {{product.title}}
+        </p>
+        <p *ngSwitchCase="'preview'">
+            <strong>Product Image</strong> <br>
+            <img [src]="product.image" width="300" height="300" alt="">
+        </p>
+        <p *ngSwitchCase="'rating'">
+            <strong>Product Price</strong> <br>
+            {{product.price}} <br>
+            <strong>Product rating</strong> <br>
+            <i class="bi bi-star-fill text-warning"></i>
+            {{product.rating.rate}} [{{product.rating.count}}]
+        </p>
+        <p *ngSwitchCase="'description'">
+            <strong>Product Title</strong>  {{product.description}}
+        </p>
+    </div>
+</div>
