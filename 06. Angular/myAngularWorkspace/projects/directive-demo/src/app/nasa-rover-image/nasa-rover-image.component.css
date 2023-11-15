@@ -1,0 +1,15 @@
+
+
+.sticky-div{
+    position: sticky;
+    top: 0px;
+    height: 100px;
+    z-index: 10;
+    background-color: white;
+}
+.sticky-div-th{
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+    background-color: white;
+}

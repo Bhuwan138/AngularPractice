@@ -6,19 +6,21 @@ import { IfDemoComponent } from './if-demo/if-demo.component';
 import { FormsModule } from '@angular/forms';
 import { IfElseComponent } from './if-else/if-else.component';
 import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
+import { NasaRoverImageComponent } from './nasa-rover-image/nasa-rover-image.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IfDemoComponent,
     IfElseComponent,
-    SwitchDemoComponent
+    SwitchDemoComponent,
+    NasaRoverImageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [SwitchDemoComponent]
+  bootstrap: [NasaRoverImageComponent]
 })
 export class AppModule { }

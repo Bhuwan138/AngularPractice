@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="top sticky-div mb-2">
+        <h2>Mars Photos</h2>
+        <button class="btn btn-info" (click)="GetMarsObject()">Get Mars Photos</button>
+        <button class="btn btn-danger m-2" (click)="ToogleShowFormat()">{{showFormat}}</button>
+    </div>
+    <div [ngSwitch]="showFormat">
+        <table *ngSwitchCase="'Show in Grid'" class="table table-hover">
+            <thead class="sticky-div-th">
+                <tr>
+                    <th>Photo ID</th>
+                    <th>Camera Name</th>
+                    <th>Date</th>
+                    <th>Image</th>
+                    <th>Rover Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of marsObject">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.camera.full_name }}</td>
+                    <td>{{ item.earth_date }}</td>
+                    <td> <img [src]="item.img_src" [alt]="item.camera.name" width="100px" height="100px"> </td>
+                    <td>{{ item.rover.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngSwitchCase="'Show in Table'" class="d-flex flex-wrap">
+            <div *ngFor="let item of marsObject" class="card m-3 p-2" style="width: 200px;">
+                <img [src]="item.img_src" [alt]="item.camera.name" class="card-img top">
+                <div class="card-header">
+                    <h3> {{item.id}} </h3>
+                </div>
+                <div class="card-body">
+                    <dl>
+                        <dt>Camera Name</dt>
+                        <dd> {{item.camera.full_name}} </dd>
+                        <dt>Date</dt>
+                        <dd> {{item.earth_date}} </dd>
+                        <dt>Rover Name</dt>
+                        <dd> {{item.rover.name}} </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
