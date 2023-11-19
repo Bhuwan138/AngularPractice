@@ -1,0 +1,17 @@
+<div class="container d-flex justify-content-center align-item-center">
+    <div class="form" [ngClass]="{
+      'style-success': username.value === 'admin' && password.value === 'admin',
+      'style-error': username.value !== 'admin' || password.value !== 'admin'
+    }">
+      <div>
+        <label for="username">Username</label>
+        <input type="username" id="username" name="username" ngModel #username="ngModel" placeholder="Enter username">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" ngModel #password="ngModel" placeholder="Enter password">
+      </div>
+      <button type="button" (click)="OnSubmit()">Login</button>
+    </div>
+  </div>
+  
